@@ -102,13 +102,36 @@ footer a{color:var(--muted);text-decoration:none}
 footer a:hover{color:var(--text)}
 @media(max-width:900px){.features{grid-template-columns:repeat(2,1fr)}.tools{grid-template-columns:repeat(2,1fr)}.pricing{grid-template-columns:1fr}}
 @media(max-width:600px){nav{padding:14px 20px}nav ul{display:none}.stats{gap:24px}.form-row{flex-direction:column;padding:10px}footer{flex-direction:column;gap:10px;text-align:center}}
+
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--text);transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:768px){
+  .hamburger{display:flex}
+  nav ul{display:none;position:absolute;top:60px;left:0;right:0;background:var(--bg);flex-direction:column;gap:0;padding:16px 24px;border-bottom:1px solid var(--border)}
+  nav ul.open{display:flex}
+  nav ul li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+  nav ul li:last-child{border:none;padding-top:16px}
+  .nav-cta{display:inline-block;margin-top:4px}
+  .hero h1{font-size:clamp(2.2rem,8vw,3.5rem)}
+  .pricing{flex-direction:column;align-items:center}
+  .plan{width:100%;max-width:380px}
+  .features-grid{grid-template-columns:1fr}
+  .tools-grid{grid-template-columns:1fr 1fr}
+  .stats{gap:24px}
+  .hero-form{flex-direction:column;align-items:stretch}
+  .hero-form input,.hero-form button{width:100%}
+}
 </style>
 </head>
 <body>
 
 <nav>
   <a href="/" class="logo">Agent<span>Copy</span> Pro</a>
-  <ul>
+  <button class="hamburger" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <ul id="navMenu">
     <li><a href="#features">Features</a></li>
     <li><a href="#tools">Tools</a></li>
     <li><a href="#pricing">Pricing</a></li>
@@ -307,6 +330,19 @@ function handleSubmit(e) {
     })
     .catch(function() { alert('Something went wrong, please try again.'); });
 }
+</script>
+
+<script>
+document.getElementById('navToggle').addEventListener('click',function(){
+  this.classList.toggle('open');
+  document.getElementById('navMenu').classList.toggle('open');
+});
+document.querySelectorAll('#navMenu a').forEach(function(a){
+  a.addEventListener('click',function(){
+    document.getElementById('navToggle').classList.remove('open');
+    document.getElementById('navMenu').classList.remove('open');
+  });
+});
 </script>
 </body>
 </html>
