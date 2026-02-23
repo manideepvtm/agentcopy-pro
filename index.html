@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgentCopy Pro - AI Copywriting That Converts</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0f;--surface:#111118;--border:#1e1e2e;--accent:#ff5c3a;--accent2:#ffb347;--text:#f0ede8;--muted:#6b6880;--card:#13131c}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(10,10,15,0.9);backdrop-filter:blur(20px)}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem}.logo span{color:var(--accent)}
+nav ul{display:flex;gap:36px;list-style:none}
+nav a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500}
+.nav-cta{background:var(--accent)!important;color:#fff!important;padding:10px 24px;border-radius:6px}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative}
+.hero-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,58,.15) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,92,58,.1);border:1px solid rgba(255,92,58,.25);color:var(--accent);padding:6px 16px;border-radius:100px;font-size:.82rem;font-weight:500;margin-bottom:32px}
+h1{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,6vw,5.5rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;max-width:820px;margin-bottom:24px}
+h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1.15rem;color:var(--muted);max-width:520px;margin-bottom:48px}.hero-actions{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.btn-primary{background:var(--accent);color:#fff;padding:16px 36px;border-radius:8px;font-size:1rem;font-weight:600;text-decoration:none;box-shadow:0 0 40px rgba(255,92,58,.3)}
+.btn-ghost{background:transparent;color:var(--text);padding:16px 36px;border-radius:8px;font-size:1rem;text-decoration:none;border:1px solid var(--border)}
+.hero-stats{display:flex;gap:48px;margin-top:60px}.stat-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;text-align:center}.stat-label{font-size:.8rem;color:var(--muted);text-align:center}
+.marquee-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:18px 0;background:var(--surface)}
+.marquee{display:flex;gap:60px;width:max-content;animation:scroll 25s linear infinite}
+.marquee-item{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:600;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.marquee-item span{color:var(--accent);margin:0 8px}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+section{padding:100px 24px}.container{max-width:1100px;margin:0 auto}
+.section-label{font-size:.78rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.section-title{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin-bottom:16px}
+.section-sub{color:var(--muted);max-width:480px;margin-bottom:60px}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px;border:2px solid var(--border);border-radius:16px;overflow:hidden}
+.feature-card{background:var(--card);padding:40px}.feature-icon{width:48px;height:48px;border-radius:12px;background:rgba(255,92,58,.1);border:1px solid rgba(255,92,58,.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:24px}
+.feature-card h3{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:10px}.feature-card p{color:var(--muted);font-size:.9rem;line-height:1.65}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:48px}
+.tool-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px 24px;text-align:center}
+.tool-emoji{font-size:2rem;margin-bottom:12px}.tool-name{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;margin-bottom:6px}.tool-desc{font-size:.8rem;color:var(--muted)}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:48px}
+.price-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:40px;position:relative}.price-card.featured{border-color:var(--accent)}
+.featured-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;padding:5px 18px;border-radius:100px}
+.price-plan{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.price-amount{font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;line-height:1;margin-bottom:4px}.price-amount span{font-size:1.2rem;color:var(--muted)}
+.price-period{color:var(--muted);font-size:.85rem;margin-bottom:28px}.price-features{list-style:none;margin-bottom:36px}
+.price-features li{font-size:.9rem;color:var(--muted);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:center;gap:10px}
+.price-features li::before{content:'check';font-size:.7rem;color:var(--accent);font-weight:700}
+.cta-section{text-align:center}.cta-section h2{font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,4rem);font-weight:800;margin-bottom:20px}
+.cta-section p{color:var(--muted);font-size:1.1rem;max-width:480px;margin:0 auto 40px}
+footer{border-top:1px solid var(--border);padding:40px 48px;display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:.85rem}
+footer a{color:var(--muted);text-decoration:none}
+</style>
+</head>
+<body>
+<nav><div class="logo">Agent<span>Copy</span> Pro</div><ul><li><a href="#features">Features</a></li><li><a href="#tools">Tools</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#pricing" class="nav-cta">Start Free</a></li></ul></nav>
+<section class="hero"><div class="hero-glow"></div><div class="badge">AI-Powered Copywriting Platform</div><h1>Copy That <em>Sells</em><br>Written in Seconds</h1><p class="hero-sub">AgentCopy Pro generates high-converting sales copy, ads, emails, and landing pages using advanced AI.</p><div class="hero-actions"><a href="#pricing" class="btn-primary">Start Free - No Credit Card</a><a href="#tools" class="btn-ghost">See All Tools</a></div><div class="hero-stats"><div class="stat"><div class="stat-num">50+</div><div class="stat-label">Copy Templates</div></div><div class="stat"><div class="stat-num">10x</div><div class="stat-label">Faster Writing</div></div><div class="stat"><div class="stat-num">3.2x</div><div class="stat-label">Avg Conversion Lift</div></div></div></section>
+<div class="marquee-wrap"><div class="marquee"><span class="marquee-item">Facebook Ads<span>*</span></span><span class="marquee-item">Email Sequences<span>*</span></span><span class="marquee-item">Sales Pages<span>*</span></span><span class="marquee-item">VSL Scripts<span>*</span></span><span class="marquee-item">Product Descriptions<span>*</span></span><span class="marquee-item">Cold Outreach<span>*</span></span><span class="marquee-item">Google Ads<span>*</span></span><span class="marquee-item">Facebook Ads<span>*</span></span><span class="marquee-item">Email Sequences<span>*</span></span><span class="marquee-item">Sales Pages<span>*</span></span><span class="marquee-item">VSL Scripts<span>*</span></span><span class="marquee-item">Product Descriptions<span>*</span></span></div></div>
+<section id="features"><div class="container"><div class="section-label">Why AgentCopy Pro</div><h2 class="section-title">Not just AI. AI trained to convert.</h2><p class="section-sub">Every output optimized for one thing - making your audience take action.</p><div class="features-grid"><div class="feature-card"><div class="feature-icon">⚡</div><h3>Instant Generation</h3><p>Get 5 variations of high-converting copy in under 10 seconds.</p></div><div class="feature-card"><div class="feature-icon">🎯</div><h3>Conversion-Focused</h3><p>Built on proven copywriting frameworks: AIDA, PAS, 4Ps.</p></div><div class="feature-card"><div class="feature-icon">🧠</div><h3>Niche Intelligence</h3><p>Tell us your niche once. AgentCopy Pro learns your brand voice automatically.</p></div><div class="feature-card"><div class="feature-icon">🔄</div><h3>One-Click Rewrites</h3><p>Punch it up, soften it, or switch angles with a single click.</p></div><div class="feature-card"><div class="feature-icon">📊</div><h3>A/B Ready Output</h3><p>Multiple variants so you can test what actually works.</p></div><div class="feature-card"><div class="feature-icon">🌐</div><h3>Multi-Channel</h3><p>Ads, emails, landing pages, social - all under one roof.</p></div></div></div></section>
+<section id="tools" style="background:var(--surface)"><div class="container"><div class="section-label">Copy Tools</div><h2 class="section-title">Everything you need to write copy that works.</h2><div class="tools-grid"><div class="tool-card"><div class="tool-emoji">📣</div><div class="tool-name">Ad Copy Generator</div><div class="tool-desc">Facebook, Google, TikTok, YouTube ads</div></div><div class="tool-card"><div class="tool-emoji">📧</div><div class="tool-name">Email Sequences</div><div class="tool-desc">Welcome, nurture, sales and re-engagement</div></div><div class="tool-card"><div class="tool-emoji">🖥️</div><div class="tool-name">Landing Pages</div><div class="tool-desc">Above-the-fold, headlines, CTAs</div></div><div class="tool-card"><div class="tool-emoji">🎬</div><div class="tool-name">VSL Scripts</div><div class="tool-desc">Video sales letters that hook and convert</div></div><div class="tool-card"><div class="tool-emoji">📱</div><div class="tool-name">Social Captions</div><div class="tool-desc">Instagram, LinkedIn, Twitter/X posts</div></div><div class="tool-card"><div class="tool-emoji">🛍️</div><div class="tool-name">Product Descriptions</div><div class="tool-desc">eCommerce copy that drives purchases</div></div><div class="tool-card"><div class="tool-emoji">✉️</div><div class="tool-name">Cold Outreach</div><div class="tool-desc">DMs and cold emails that get replies</div></div><div class="tool-card"><div class="tool-emoji">📰</div><div class="tool-name">Blog and SEO</div><div class="tool-desc">Long-form content optimized to rank</div></div></div></div></section>
+<section id="pricing"><div class="container"><div class="section-label">Pricing</div><h2 class="section-title">Simple pricing. Real results.</h2><div class="pricing-grid"><div class="price-card"><div class="price-plan">Starter</div><div class="price-amount">$0<span>/mo</span></div><div class="price-period">Forever free</div><ul class="price-features"><li>25 generations/month</li><li>5 copy tools</li><li>Email support</li></ul><a href="#" class="btn-ghost" style="display:block;text-align:center;padding:14px;">Get Started Free</a></div><div class="price-card featured"><div class="featured-badge">Most Popular</div><div class="price-plan">Pro</div><div class="price-amount">$49<span>/mo</span></div><div class="price-period">Billed monthly</div><ul class="price-features"><li>Unlimited generations</li><li>All 50+ copy tools</li><li>Brand voice training</li><li>A/B variant output</li><li>Priority support</li></ul><a href="#" class="btn-primary" style="display:block;text-align:center;padding:14px;">Start Pro Trial</a></div><div class="price-card"><div class="price-plan">Agency</div><div class="price-amount">$149<span>/mo</span></div><div class="price-period">Billed monthly</div><ul class="price-features"><li>Everything in Pro</li><li>5 team seats</li><li>Client workspaces</li><li>White-label output</li><li>API access</li></ul><a href="#" class="btn-ghost" style="display:block;text-align:center;padding:14px;">Contact Sales</a></div></div></div></section>
+<section class="cta-section"><div class="container"><h2>Your next best-performing ad is one click away.</h2><p>Join thousands of marketers using AgentCopy Pro to write faster and sell more.</p><a href="#pricing" class="btn-primary">Start Free Today</a></div></section>
+<footer><div class="logo">Agent<span>Copy</span> Pro</div><div style="display:flex;gap:32px"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a></div><div>2025 AgentCopy Pro</div></footer>
+</body>
+</html>
